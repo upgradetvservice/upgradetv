@@ -1,161 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Upgrade TV Service</title>
 
   <style>
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: #ffffff;
+      background: #050505;
+      color: #fff;
     }
 
     .hero {
       text-align: center;
-      padding: 40px 18px;
-      background: linear-gradient(180deg, #151515, #000000);
+      padding: 70px 22px 50px;
+      background: radial-gradient(circle at top, #1b1605, #000 70%);
     }
 
     .hero img {
-      max-width: 220px;
       width: 80%;
-      margin-bottom: 20px;
+      max-width: 420px;
+      margin-bottom: 35px;
     }
 
-    .hero h1 {
-      font-size: 34px;
-      margin: 10px 0;
-      color: #ffd700;
+    .badge {
+      display: inline-block;
+      background: #d6b436;
+      color: #000;
+      font-weight: 900;
+      padding: 18px 28px;
+      border-radius: 40px;
+      font-size: 20px;
+      margin-bottom: 35px;
+    }
+
+    h1 {
+      color: #d6b436;
+      font-size: 46px;
+      line-height: 1.1;
+      margin: 20px 0;
     }
 
     .hero p {
-      font-size: 18px;
+      font-size: 22px;
       color: #ddd;
-      max-width: 700px;
-      margin: 10px auto 25px;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+      line-height: 1.6;
     }
 
     .btn {
       display: inline-block;
-      background: #ffd700;
+      background: #d6b436;
       color: #000;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 17px 30px;
+      border-radius: 40px;
       text-decoration: none;
-      font-weight: bold;
-      border: none;
-    }
-
-    .btn:hover {
-      background: #ffffff;
-      color: #000;
+      font-weight: 900;
+      margin: 8px;
+      font-size: 18px;
     }
 
     .btn-outline {
       background: transparent;
-      color: #ffd700;
-      border: 2px solid #ffd700;
-    }
-
-    .btn-outline:hover {
-      background: #ffd700;
-      color: #000;
+      color: #d6b436;
+      border: 2px solid #d6b436;
     }
 
     .section {
-      padding: 35px 18px;
+      padding: 55px 22px;
       max-width: 1100px;
       margin: auto;
     }
 
-    .section h2 {
+    h2 {
       text-align: center;
-      color: #ffd700;
-      margin-bottom: 25px;
-      font-size: 28px;
+      font-size: 38px;
+      margin-bottom: 35px;
+      color: #fff;
     }
 
     .currency-box {
       text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
     select {
-      padding: 10px 14px;
-      border-radius: 8px;
-      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
       font-weight: bold;
+      font-size: 16px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
     }
 
     .card {
-      background: #181818;
-      border: 1px solid #333;
-      border-radius: 14px;
-      padding: 22px;
+      background: #121212;
+      border-radius: 18px;
+      padding: 28px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.08);
+      border: 1px solid #333;
+      box-shadow: 0 0 18px rgba(214, 180, 54, 0.12);
     }
 
     .card h3 {
-      color: #ffd700;
+      color: #d6b436;
+      font-size: 24px;
       margin-top: 0;
-      font-size: 22px;
     }
 
     .price {
-      font-size: 26px;
-      font-weight: bold;
-      margin: 15px 0;
-      color: #ffffff;
+      font-size: 30px;
+      font-weight: 900;
+      margin: 18px 0;
     }
 
     .popular {
-      border: 2px solid #ffd700;
+      border: 2px solid #d6b436;
     }
 
     .label {
-      display: inline-block;
-      background: #ffd700;
+      background: #d6b436;
       color: #000;
-      padding: 6px 10px;
+      padding: 7px 14px;
       border-radius: 20px;
+      font-weight: 900;
       font-size: 12px;
-      font-weight: bold;
-      margin-bottom: 10px;
+    }
+
+    .device-list {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .device {
+      background: #121212;
+      margin: 18px 0;
+      padding: 22px 28px;
+      border-radius: 16px;
+      border-left: 6px solid #d6b436;
+      font-size: 24px;
+    }
+
+    details {
+      background: #121212;
+      border: 1px solid #333;
+      padding: 22px;
+      margin: 16px 0;
+      border-radius: 16px;
+      font-size: 20px;
+    }
+
+    summary {
+      color: #d6b436;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .ready {
+      text-align: center;
+      background: #111;
+      padding-bottom: 110px;
+    }
+
+    .phone {
+      color: #d6b436;
+      font-size: 36px;
+      font-weight: 900;
+    }
+
+    .fixed-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      left: 22px;
+      right: 22px;
+      background: #25d366;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      border-radius: 40px;
+      font-size: 20px;
+      font-weight: 900;
+      text-decoration: none;
+      z-index: 999;
     }
 
     .note {
-      font-size: 14px;
-      color: #cccccc;
+      color: #ccc;
+      font-size: 15px;
     }
 
     footer {
       text-align: center;
       padding: 25px;
+      color: #777;
       background: #000;
-      color: #999;
-      font-size: 14px;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -164,20 +209,23 @@
 
   <div class="hero">
     <img src="Upgradetv.png" alt="Upgrade TV Service">
-    <h1>Upgrade TV Service</h1>
-    <p>Affordable IPTV plans with live TV, sports, movies, series, and entertainment for your favorite devices.</p>
 
-    <div class="buttons">
-      <a href="#plans" class="btn">View Plans</a>
-      <a href="#download-players" class="btn btn-outline">Download Players</a>
-    </div>
+    <div class="badge">INSTANT SETUP • START WATCHING IN MINUTES</div>
+
+    <h1>Upgrade Your TV Experience</h1>
+
+    <p>Live TV • Sports • Movies • Series<br>HD • FHD • 4K Streaming Available</p>
+
+    <a href="https://wa.me/18763695979?text=I%20want%20to%20order%20Upgrade%20TV%20Service" class="btn">Order on WhatsApp</a>
+    <a href="#plans" class="btn btn-outline">View Plans</a>
+    <a href="#download-players" class="btn btn-outline">Download Players</a>
   </div>
 
   <div class="section" id="plans">
     <h2>Choose Your Plan</h2>
 
     <div class="currency-box">
-      <label for="currency"><strong>Choose Currency:</strong></label>
+      <label><strong>Choose Currency:</strong></label>
       <select id="currency" onchange="changeCurrency()">
         <option value="jmd">JMD</option>
         <option value="usd">USD</option>
@@ -235,6 +283,13 @@
         <p>After payment, send confirmation on WhatsApp.</p>
       </div>
 
+      <div class="card">
+        <h3>NCB Bank Transfer</h3>
+        <p><strong>NCB payment available for Jamaica customers.</strong></p>
+        <p>Send payment confirmation on WhatsApp after transfer.</p>
+        <a class="btn" href="https://wa.me/18763695979?text=I%20need%20the%20NCB%20payment%20details">Get NCB Details</a>
+      </div>
+
     </div>
   </div>
 
@@ -247,18 +302,6 @@
         <h3>IPTV Smarters Player</h3>
         <p>Recommended for Android phones, Android boxes, and Firestick.</p>
         <a class="btn" href="https://www.mediafire.com/file/aaq3np0qj37639h/iptv-smarters-5.0.apk/file" target="_blank">Download Player</a>
-      </div>
-
-      <div class="card">
-        <h3>M-Tivi Player</h3>
-        <p>Alternative player available for supported devices.</p>
-        <a class="btn" href="https://www.mediafire.com/file/c8kbpde98ktrg86/m-tivi.apk/file" target="_blank">Download Player</a>
-      </div>
-
-      <div class="card">
-        <h3>Mega Platinum Player</h3>
-        <p>Premium alternative player for supported Android and TV devices.</p>
-        <a class="btn" href="https://www.mediafire.com/file/g5yk1jgeqngok1y/mega-platinum.apk/file" target="_blank">Download Player</a>
       </div>
 
       <div class="card">
@@ -282,9 +325,56 @@
     </div>
   </div>
 
+  <div class="section">
+    <h2>Supported Devices</h2>
+
+    <div class="device-list">
+      <div class="device">✓ Firestick</div>
+      <div class="device">✓ Android TV Box</div>
+      <div class="device">✓ Smart TV</div>
+      <div class="device">✓ Android Phone</div>
+      <div class="device">✓ Tablet</div>
+      <div class="device">✓ Additional TVs Available</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Frequently Asked Questions</h2>
+
+    <details>
+      <summary>How long does setup take?</summary>
+      <p>Setup is usually done within minutes after payment confirmation.</p>
+    </details>
+
+    <details>
+      <summary>Can I watch on more than one TV?</summary>
+      <p>Yes. Some packages include multiple TVs, and extra connections are available.</p>
+    </details>
+
+    <details>
+      <summary>What currency is the main price?</summary>
+      <p>The main pricing is listed in JMD, with USD and CAD options available.</p>
+    </details>
+
+    <details>
+      <summary>What happens after I pay?</summary>
+      <p>Send confirmation on WhatsApp and your login/setup details will be sent to you.</p>
+    </details>
+  </div>
+
+  <div class="section ready">
+    <h2>Ready to Upgrade?</h2>
+    <p style="font-size:22px;">Message us now on WhatsApp to get started.</p>
+    <div class="phone">876-369-5979</div>
+  </div>
+
   <footer>
     Upgrade TV Service &copy; 2026. All Rights Reserved.
   </footer>
+
+  <a class="fixed-whatsapp" href="https://wa.me/18763695979?text=I%20want%20to%20order%20Upgrade%20TV%20Service">
+    WhatsApp Order Now
+  </a>
 
   <script>
     function changeCurrency() {
